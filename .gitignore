@@ -1,6 +1,7 @@
 # The model (about 640 MB) is not in the repository: models/README.md says where to get it.
 /models/*
 !/models/README.md
+!/models/README.zh-CN.md
 
 # Build output: Xcode's derived data, apps and disk images
 /build/
