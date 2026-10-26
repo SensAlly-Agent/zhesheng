@@ -1,0 +1,38 @@
+{
+  "fill": {
+    "solid": "srgb:0.07059,0.03137,0.07843,1.00000"
+  },
+  "groups": [
+    {
+      "layers": [
+        {
+          "image-name": "FoldingSound.png",
+          "name": "Folding Sound",
+          "glass": false,
+          "position": {
+            "scale": 1.18,
+            "translation-in-points": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "name": "Folding Sound",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0
+      },
+      "specular": false,
+      "translucency": {
+        "enabled": false,
+        "value": 0
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "macOS"
+    ]
+  }
+}

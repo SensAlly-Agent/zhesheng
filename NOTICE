@@ -1,0 +1,72 @@
+折声 (zhesheng)
+https://github.com/SensAlly-Agent/zhesheng
+
+折声 is a modified version of eg2-transcribe by john-rocky
+(https://github.com/john-rocky/eg2-transcribe, commit e6b7d5df02fcfe940c194d00ad5d055f958b9c6c),
+licensed under the Apache License, Version 2.0 (LICENSE). eg2-transcribe's ios/ folder is this
+repository's source/ios/; its android/ and reader/ folders are not included.
+
+
+Changes (Apache License 2.0, section 4(b))
+
+折声 changes eg2-transcribe into a Mac app for Mandarin: the zh-v4 Mandarin reader with a character
+language model (CTC prefix beam search with shallow fusion), the model bundled in the app, recording with
+a confirmation before clearing, proofreading through AI websites (copy out, paste back), an editable
+transcript, a new interface in Chinese, and tests. The Mandarin and language-model changes started from
+the patch of eg2-transcribe in the eg2zh v4 model package, offered under the Apache License 2.0.
+
+Files changed from eg2-transcribe (each says so in its first line):
+
+  source/ios/README.md                          (a note at the top only)
+  source/ios/project.yml
+  source/ios/Sources/App.swift
+  source/ios/Sources/Autoplay.swift
+  source/ios/Sources/Audio/AudioRecorder.swift
+  source/ios/Sources/Audio/LogMelExtractor.swift
+  source/ios/Sources/Models/ModelFiles.swift
+  source/ios/Sources/Models/ModelStore.swift
+  source/ios/Sources/Pipeline/PipelineConfig.swift
+  source/ios/Sources/Pipeline/Transcriber.swift
+  source/ios/Sources/Pipeline/Windowing.swift
+  source/ios/Sources/SelfTest/SelfTest.swift
+  source/ios/Sources/UI/AppModel.swift
+  source/ios/Sources/UI/ContentView.swift
+  source/ios/Sources/UI/SettingsView.swift
+  source/ios/Sources/UI/StatsView.swift
+  source/ios/Sources/UI/TranscriptView.swift
+
+Files copied from eg2-transcribe unchanged:
+
+  source/ios/.gitignore
+  source/ios/Resources/Licenses/LICENSE.eg2-transcribe   (eg2-transcribe's LICENSE; the same text as LICENSE)
+  source/ios/Sources/Audio/AudioDecoder.swift
+  source/ios/Sources/Models/ModelCache.swift
+  source/ios/Sources/Pipeline/Greedy.swift
+  source/ios/Sources/Pipeline/Stage.swift
+  source/ios/Sources/Pipeline/Tensor.swift
+  source/ios/Sources/Pipeline/TranscribeError.swift
+  source/ios/Sources/SelfTest/DeviceProbe.swift
+  source/ios/Sources/SelfTest/NPY.swift
+  source/ios/tools/make_mel_filters.py
+
+Every other file is new in 折声 and licensed under the Apache License 2.0, except the model notices in
+source/ios/Resources/Licenses/ described below.
+
+
+Models
+
+The models are not in this repository. They are inside the app and in the model pack of the releases
+(zhesheng-model-v4.zip, unzipped into models/).
+
+- Mandarin reader zh-v4 (eg2_reader_zh_fp16_T750.aimodel, vocab.txt, reader_config.json) and the
+  character language model lm_zh_char.eg2lm: Creative Commons Attribution-ShareAlike 4.0
+  (CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/). The training data, its creators and
+  the attributions are in source/ios/Resources/Licenses/: NOTICE.md, DATA_LICENSES.json, LM_NOTICE.md
+  and YODAS_VIDEOS.tsv. Keep these files with the reader and the language model.
+
+- EmbeddingGemma 2 audio encoder (eg2_audio_fp16_T3000.aimodel), pipeline.json and mel_filters.bin:
+  from https://huggingface.co/mlboydaisuke/EmbeddingGemma-2-Transcribe-CoreAI at revision
+  76865ae46793e05617c2a7420454b0c7eb8541a4, Apache License 2.0. pipeline.json was adapted to the
+  Mandarin reader (PROVENANCE.txt in the model folder); the licence files are in the model folder's
+  licenses/EmbeddingGemma-2-Transcribe-CoreAI/. Use of EmbeddingGemma 2 must follow the Gemma
+  Prohibited Use Policy (https://ai.google.dev/gemma/prohibited_use_policy).

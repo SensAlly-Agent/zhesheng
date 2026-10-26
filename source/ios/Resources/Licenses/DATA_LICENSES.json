@@ -1,0 +1,328 @@
+{
+ "non_commercial": false,
+ "non_commercial_splits": [],
+ "note": "all training data allows commercial use (keep the licence notices)",
+ "encoder": "google/embeddinggemma-2@914f7f89142e33e77833254d9c9b90c3cef7303b (its own terms apply)",
+ "splits": {
+  "train": {
+   "title": "AISHELL-1 (OpenSLR SLR33) train",
+   "license": "Apache-2.0",
+   "license_source": "https://www.openslr.org/33/ ('Apache License v.2.0'; the page also says 'free for academic use')",
+   "commercial_use": true,
+   "sources": [
+    {
+     "repo": "knoveleng/aishell1-mandarin",
+     "revision": "c6dde006238091dc7c81cf5888208140bba33cba"
+    }
+   ]
+  },
+  "extra_aishell3": {
+   "title": "AISHELL-3 (OpenSLR SLR93)",
+   "license": "Apache-2.0",
+   "license_source": "https://www.openslr.org/93/ ('License: Apache License v.2.0')",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "knoveleng/aishell3-mandarin",
+     "revision": "49526f2eada0864ea8c4014cd8106ab0a037a175",
+     "patterns": [
+      "data/*.parquet"
+     ]
+    }
+   ],
+   "kept_utterances": 85855,
+   "kept_hours": 83.082,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_cv": {
+   "title": "Common Voice zh-CN (v22 train/dev/test + v17 validated clips absent from the v22 mirror)",
+   "license": "CC0-1.0",
+   "license_source": "Mozilla Common Voice (CC0); dataset cards of fsicoli/common_voice_22_0 and masuidrive/cv-corpus-17.0-zh-CN-client_id-grouped: 'license: cc0-1.0'",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "fsicoli/common_voice_22_0",
+     "revision": "ae911de250fe9375d08e2daa2105b671d659d446",
+     "patterns": [
+      "audio/zh-CN/train/*.tar",
+      "audio/zh-CN/dev/*.tar",
+      "audio/zh-CN/test/*.tar",
+      "transcript/zh-CN/train.tsv",
+      "transcript/zh-CN/dev.tsv",
+      "transcript/zh-CN/test.tsv",
+      "transcript/zh-CN/validated.tsv"
+     ]
+    },
+    {
+     "repo": "masuidrive/cv-corpus-17.0-zh-CN-client_id-grouped",
+     "revision": "61f9e8718b832db5fb1aecf80650f84fa90f8b2c",
+     "patterns": [
+      "*.parquet"
+     ]
+    }
+   ],
+   "kept_utterances": 107369,
+   "kept_hours": 156.689,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_alimeeting": {
+   "title": "AliMeeting (OpenSLR SLR119), near-field headset channels",
+   "license": "CC BY-SA 4.0",
+   "license_source": "https://www.openslr.org/119/ ('License: CC BY-SA 4.0')",
+   "commercial_use": true,
+   "redistribution": "CC BY-SA 4.0: attribution; adapted material that is shared carries CC BY-SA 4.0",
+   "sources": [
+    {
+     "archive": "Train_Ali_near.tar.gz",
+     "extracted": "Train_Ali_near",
+     "bytes": 24530908701,
+     "sha256": "4c6512112f0f23bdfe535b8878c0ff140eb267b37c923b8794171edcc5d5d996",
+     "crc64ecma": "2522796480573142712",
+     "urls": [
+      "https://huggingface.co/datasets/huseinzol05/AliMeeting-mirror/resolve/1e44bce4441d41bc78e24da23bd30972a71c3d68/Train_Ali_near.tar.gz",
+      "https://speech-lab-share-data.oss-cn-shanghai.aliyuncs.com/AliMeeting/openlr/Train_Ali_near.tar.gz"
+     ]
+    }
+   ],
+   "kept_utterances": 150901,
+   "kept_hours": 134.615,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_fleurs": {
+   "title": "FLEURS cmn_hans_cn (train + validation; test left out)",
+   "license": "CC BY 4.0",
+   "license_source": "google/fleurs dataset card ('license: cc-by-4.0')",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "google/fleurs",
+     "revision": "70bb2e84b976b7e960aa89f1c648e09c59f894dd",
+     "patterns": [
+      "parquet-data/cmn_hans_cn/train-*.parquet",
+      "parquet-data/cmn_hans_cn/validation-*.parquet"
+     ]
+    }
+   ],
+   "kept_utterances": 2443,
+   "kept_hours": 6.917,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_ascend": {
+   "title": "ASCEND (train + validation; Mandarin-only turns kept; test left out)",
+   "license": "CC BY-SA 4.0",
+   "license_source": "CAiRE/ASCEND dataset card ('license: cc-by-sa-4.0'); owner accepted CC BY-SA on 2026-10-24",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "CAiRE/ASCEND",
+     "revision": "737e9800ae31be9932ba8464c80366559bd28424",
+     "patterns": [
+      "main/train-*.parquet",
+      "main/validation-*.parquet"
+     ]
+    }
+   ],
+   "kept_utterances": 4096,
+   "kept_hours": 3.305,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_css10": {
+   "title": "CSS10 Chinese (single speaker reading Lu Xun)",
+   "license": "CC0-1.0",
+   "license_source": "CSS10 (github.com/Kyubyong/css10, Kaggle data page: 'CC0: Public Domain'); Hub mirror davidguzmanr/CSS10-Multilingual-LJSpeech",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "davidguzmanr/CSS10-Multilingual-LJSpeech",
+     "revision": "8f9c757d143324769013b4bdf49240897557d20d",
+     "patterns": [
+      "Chinese/*.parquet"
+     ]
+    }
+   ],
+   "kept_utterances": 2836,
+   "kept_hours": 6.139,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_cvtw": {
+   "title": "Common Voice zh-TW v22 (train + dev + test)",
+   "license": "CC0-1.0",
+   "license_source": "Mozilla Common Voice (CC0); dataset card of fsicoli/common_voice_22_0 ('license: cc0-1.0')",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "fsicoli/common_voice_22_0",
+     "revision": "ae911de250fe9375d08e2daa2105b671d659d446",
+     "patterns": [
+      "audio/zh-TW/train/*.tar",
+      "audio/zh-TW/dev/*.tar",
+      "audio/zh-TW/test/*.tar",
+      "transcript/zh-TW/train.tsv",
+      "transcript/zh-TW/dev.tsv",
+      "transcript/zh-TW/test.tsv",
+      "transcript/zh-TW/validated.tsv"
+     ]
+    }
+   ],
+   "kept_utterances": 17457,
+   "kept_hours": 16.736,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_thchs30": {
+   "title": "THCHS-30 (OpenSLR SLR18), all of data/ (train + dev + test)",
+   "license": "Apache-2.0",
+   "license_source": "https://www.openslr.org/18/ ('License: Apache License v.2.0'; the page also says 'totally free to academic users': owner accepted the risk on 2026-10-24)",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "openslr.org/18",
+     "revision": "data_thchs30.tgz (6453425169 bytes)",
+     "patterns": [
+      "https://www.openslr.org/resources/18/data_thchs30.tgz"
+     ]
+    }
+   ],
+   "kept_utterances": 9985,
+   "kept_hours": 25.482,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_yodas": {
+   "title": "YODAS_OWSMv4 yodas0.10, zho -> zho ASR utterances",
+   "license": "CC BY 3.0",
+   "license_source": "espnet/yodas_owsmv4 dataset card ('license: cc-by-3.0'); YouTube videos the uploaders put under CC BY; captions not human-checked (owner accepted the risk on 2026-10-24)",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "espnet/yodas_owsmv4",
+     "revision": "3bc62fd77f22f5bc2f116c6c21bcb12d5b85ab07",
+     "patterns": [
+      "dump/raw/yodas0.10/wav.scp",
+      "dump/raw/yodas0.10/text.ctc",
+      "dump/raw/org/yodas0.00/**.ark"
+     ]
+    }
+   ],
+   "kept_utterances": 18166,
+   "kept_hours": 137.967,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_synth_a": {
+   "title": "eg2zh v4 synthetic speech: Chinese Wikipedia sentences spoken by Qwen3-TTS (clips that passed tts_check.py), part a (~10 % arm)",
+   "license": "CC BY-SA 3.0 (text: Wikipedia contributors, wikimedia/wikipedia 20231101.zh); audio generated with Qwen3-TTS-12Hz-1.7B VoiceDesign / CustomVoice (Apache-2.0 weights)",
+   "license_source": "wikimedia/wikipedia dataset card (cc-by-sa-3.0, gfdl); Qwen3-TTS model cards (apache-2.0); owner decision 2026-10-24 (TTS data, no cloud API)",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "bucket runs/zh_v4_synth/gen",
+     "revision": "text.tsv sha256 34d9230a",
+     "patterns": [
+      "*.tar"
+     ]
+    }
+   ],
+   "kept_utterances": 38902,
+   "kept_hours": 68.579,
+   "textnorm": "textnorm_zh-2"
+  },
+  "extra_synth_b": {
+   "title": "eg2zh v4 synthetic speech: Chinese Wikipedia sentences spoken by Qwen3-TTS (clips that passed tts_check.py), part b (with a: ~30 % arm)",
+   "license": "CC BY-SA 3.0 (text: Wikipedia contributors, wikimedia/wikipedia 20231101.zh); audio generated with Qwen3-TTS-12Hz-1.7B VoiceDesign / CustomVoice (Apache-2.0 weights)",
+   "license_source": "wikimedia/wikipedia dataset card (cc-by-sa-3.0, gfdl); Qwen3-TTS model cards (apache-2.0); owner decision 2026-10-24 (TTS data, no cloud API)",
+   "commercial_use": true,
+   "redistribution": "allowed (keep the licence notice)",
+   "sources": [
+    {
+     "repo": "bucket runs/zh_v4_synth/gen",
+     "revision": "text.tsv sha256 34d9230a",
+     "patterns": [
+      "*.tar"
+     ]
+    }
+   ],
+   "kept_utterances": 94189,
+   "kept_hours": 169.588,
+   "textnorm": "textnorm_zh-2"
+  }
+ },
+ "lm": {
+  "file": "lm/lm_zh_char.eg2lm",
+  "sha256": "3dd72e35359da38e61d09d4284ad0ff74515e6fc56ac27dd60df9020eadfef0d",
+  "sha256_scored": "685972cffe7b79120d815441ad2d0cdf72739a57c6669fb441ba4e7f80e04d3a",
+  "bytes": 28613472,
+  "licence": "CC BY-SA 4.0",
+  "commercial_use": true,
+  "non_commercial": false,
+  "estimated_from": "the transcripts of the real-speech training corpora (candidate L1), see lm/LM_NOTICE.md",
+  "sources": [
+   {
+    "name": "aishell1_v1_train",
+    "title": "AISHELL-1 train",
+    "licence": "Apache-2.0",
+    "sentences_kept": 112876
+   },
+   {
+    "name": "extra_v1_extra_aishell3",
+    "title": "AISHELL-3",
+    "licence": "Apache-2.0",
+    "sentences_kept": 70308
+   },
+   {
+    "name": "extra_v1_extra_cv",
+    "title": "Common Voice zh-CN",
+    "licence": "CC0-1.0",
+    "sentences_kept": 50606
+   },
+   {
+    "name": "alimeeting_v1_extra_alimeeting",
+    "title": "AliMeeting train (near)",
+    "licence": "CC BY-SA 4.0",
+    "sentences_kept": 122852
+   },
+   {
+    "name": "more_v1_extra_thchs30",
+    "title": "THCHS-30",
+    "licence": "Apache-2.0",
+    "sentences_kept": 999
+   },
+   {
+    "name": "more_v1_extra_fleurs",
+    "title": "FLEURS cmn_hans_cn",
+    "licence": "CC BY 4.0",
+    "sentences_kept": 1112
+   },
+   {
+    "name": "more_v1_extra_ascend",
+    "title": "ASCEND",
+    "licence": "CC BY-SA 4.0",
+    "sentences_kept": 3540
+   },
+   {
+    "name": "more_v1_extra_css10",
+    "title": "CSS10 Chinese",
+    "licence": "CC0-1.0",
+    "sentences_kept": 2833
+   },
+   {
+    "name": "more_v1_extra_cvtw",
+    "title": "Common Voice zh-TW",
+    "licence": "CC0-1.0",
+    "sentences_kept": 14769
+   },
+   {
+    "name": "more_v1_extra_yodas",
+    "title": "YODAS_OWSMv4 zho",
+    "licence": "CC BY 3.0",
+    "sentences_kept": 18087
+   }
+  ]
+ }
+}
